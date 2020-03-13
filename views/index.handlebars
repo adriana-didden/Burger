@@ -1,32 +1,49 @@
-<h1>Fresh Burgers</h1>
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        <p>Name: {{burger_name}}
-            <button class='devoured' value={{id}}>eat-da-burger</button>
-        </p>
+<div class="container">
+    <div class="row">
+        <h1>Fresh Burgers</h1>
+        <img src="./assets/images/burger.png" style=width:100px>
+    </div>
 
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-<h1>😞</h1>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        <p>Name: {{burger_name}}</p>
+    <div class="row">
+        <div class="column">
+            <h1>eat-da-burger</h1>
 
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+            <ul class="float-left">
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    <p>{{burger_name}}
+                        <button class='devoured btn btn-success' value={{id}}>eat-da-burger</button>
+                    </p>
 
-<div>
-    <form id='newBurger' action="/" method="POST">
-        <input id="burgerName" type="text" name="burgerDevoured"></input>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="column">
 
-        <button type="submit">Submit</button>
-    </form>
+            <h1>😞Devoured</h1>
+            <ul class="float-left">
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    <p>{{burger_name}}</p>
+
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+
+        <div>
+            <form id='newBurger' action="/" method="POST">
+                <input id="burgerName" type="text" name="burgerDevoured"></input>
+
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>

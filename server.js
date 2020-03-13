@@ -50,6 +50,7 @@ app.get('/', function (req, res) {
   })
 })
 app.post("/api/burger", function (req, res) {
+ console.log(req.body, '<=====')
 
   connection.query("INSERT INTO  burgers (burger_name) VALUES (?)", [req.body.burger_name], function (err, result) {
     if (err) {
@@ -57,13 +58,14 @@ app.post("/api/burger", function (req, res) {
       console.log(err);
       return;
     }
-    res.json({ id: result.insertId });
+    res.sendStatus('200')
     console.log({ id: result.insertId });
 
   });
 });
 
 app.put('/api/burger/:id', function (req, res) {
+  console.log('route hit')
   const id = req.params.id
   connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [1, id], (err, results) => {
     if (err) {
