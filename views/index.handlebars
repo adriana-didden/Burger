@@ -1,0 +1,32 @@
+<h1>Fresh Burgers</h1>
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        <p>Name: {{burger_name}}
+            <button class='devoured' value={{id}}>eat-da-burger</button>
+        </p>
+
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+<h1>😞</h1>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        <p>Name: {{burger_name}}</p>
+
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<div>
+    <form id='newBurger' action="/" method="POST">
+        <input id="burgerName" type="text" name="burgerDevoured"></input>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>

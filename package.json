@@ -1,21 +1,22 @@
 {
-  "name": "node-express-handlebars",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "### Overview",
-  "main": "index.js",
+  "description": "## Overview   ### Easier     In this assignment, you'll create a burger logger with MySQL, Node, Express, and  Handlebars. Use MySQL to query, the server to route data in your app, and Handlebars to generate your HTML.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adriana-didden/Node-Express-Handlebars.git"
+    "url": "git+https://github.com/adriana-didden/Burger.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adriana-didden/Node-Express-Handlebars/issues"
+    "url": "https://github.com/adriana-didden/Burger/issues"
   },
-  "homepage": "https://github.com/adriana-didden/Node-Express-Handlebars#readme",
+  "homepage": "https://github.com/adriana-didden/Burger#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",

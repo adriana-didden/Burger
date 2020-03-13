@@ -1,9 +1,11 @@
-# Node-Express-Handlebars
 # Node Express Handlebars
 
-### Overview
+## Overview
+  ### Easier
+    In this assignment, you'll create a burger logger with MySQL, Node, Express, and  Handlebars. Use MySQL to query, the server to route data in your app, and Handlebars to generate your HTML.
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+  ### Harder
+    In this assignment, you'll create a burger logger with Sequelize, Node, Express, and  Handlebars. Use Sequelize to query, the server to route data in your app, and Handlebars to generate your HTML.
 
 ### Read This
 
@@ -11,7 +13,7 @@ When trying to connect remotely to your Heroku database on an open network such 
 
 ### Important
 
-* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../03-Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
+* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../04-Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
 
 ### Before You Begin
 
@@ -25,21 +27,7 @@ When trying to connect remotely to your Heroku database on an open network such 
 
 * [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).
 
-### Commits
 
-Having an active and healthy commit history on GitHub is important for your future job search. It is also extremely important for making sure your work is saved in your repository. If something breaks, committing often ensures you are able to go back to a working version of your code.
-
-* Committing often is a signal to employers that you are actively working on your code and learning.
-
-  * We use the mantra “commit early and often.”  This means that when you write code that works, add it and commit it!
-
-  * Numerous commits allow you to see how your app is progressing and give you a point to revert to if anything goes wrong.
-
-* Be clear and descriptive in your commit messaging.
-
-  * When writing a commit message, avoid vague messages like "fixed." Be descriptive so that you and anyone else looking at your repository knows what happened with each commit.
-
-* We would like you to have well over 200 commits by graduation, so commit early and often!
 
 ### Submission on BCS
 
@@ -53,13 +41,13 @@ Having an active and healthy commit history on GitHub is important for your futu
 
 2. Make a package.json file by running `npm init` from the command line.
 
-3. Install the Express npm package: `npm install express`.
+3. Install the Express npm package: `npm i express`.
 
 4. Create a server.js file.
 
-5. Install the Handlebars npm package: `npm install express-handlebars`.
+5. Install the Handlebars npm package: `npm i express-handlebars`.
 
-6. Install MySQL npm package: `npm install mysql`.
+6. Install MySQL npm package: `npm i mysql`  or   `npm i mysql2 && npm i sequelize` if you are doing the harder version .
 
 7. Require the following npm packages inside of the server.js file:
    * express
@@ -93,52 +81,16 @@ Having an active and healthy commit history on GitHub is important for your futu
 
    * Close out of the MySQL command line tool: `exit`.
 
-#### Config Setup
+  OR
 
-1. Inside your `burger` directory, create a folder named `config`.
+  * Replace your MySQL `Burger` model with a Sequelized equivalent.
 
-2. Create a `connection.js` file inside `config` directory.
+    * Don't forget to edit the model and initial migration file to make the burger's devoured field carry a default value of false -- otherwise you might encounter bugs.
+      * There's no option to include that default in the command line, so you'll need to open up your editor to make this change.
+    * Don't forget to sync the models!
 
-   * Inside the `connection.js` file, setup the code to connect Node to MySQL.
+    * Edit your new `config.json` file to include your database configurations. Place your JawsDB details in the `production` property of your json file; the details of your local database go in the `developer` property.
 
-   * Export the connection.
-
-3. Create an `orm.js` file inside `config` directory.
-
-   * Import (require) `connection.js` into `orm.js`
-
-   * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-
-     * `selectAll()`
-     * `insertOne()`
-     * `updateOne()`
-
-   * Export the ORM object in `module.exports`.
-
-#### Model setup
-
-* Inside your `burger` directory, create a folder named `models`.
-
-  * In `models`, make a `burger.js` file.
-
-    * Inside `burger.js`, import `orm.js` into `burger.js`
-
-    * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
-
-    * Export at the end of the `burger.js` file.
-
-#### Controller setup
-
-1. Inside your `burger` directory, create a folder named `controllers`.
-
-2. In `controllers`, create the `burgers_controller.js` file.
-
-3. Inside the `burgers_controller.js` file, import the following:
-
-   * Express
-   * `burger.js`
-
-4. Create the `router` for the app, and export the `router` at the end of your file.
 
 #### View setup
 
@@ -162,20 +114,12 @@ All the recommended files and directories from the steps above should look like 
 
 ```
 .
-├── config
-│   ├── connection.js
-│   └── orm.js
-│ 
-├── controllers
-│   └── burgers_controller.js
+
 │
 ├── db
 │   ├── schema.sql
 │   └── seeds.sql
-│
-├── models
-│   └── burger.js
-│ 
+|
 ├── node_modules
 │ 
 ├── package.json
@@ -195,6 +139,8 @@ All the recommended files and directories from the steps above should look like 
     └── layouts
         └── main.handlebars
 ```
+The above will be slightly different if you use sequelize 
+
 
 ### Reminder: Submission on BCS
 
