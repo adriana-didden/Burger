@@ -1,30 +1,28 @@
 <div class="container">
-    <div class="row">
-        <h1>Fresh Burgers</h1>
-        <img src="./assets/images/burger.png" style=width:100px>
+    <div class="row ">
+        <div class="col text-center">
+            <img src="./assets/images/burger.png" style="width:300px">
+        </div>
     </div>
-
+    <br>
     <div class="row">
-        <div class="column">
+        <div class="col">
             <h1>eat-da-burger</h1>
-
-            <ul class="float-left">
+            <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
                     <p>{{burger_name}}
                         <button class='devoured btn btn-success' value={{id}}>eat-da-burger</button>
                     </p>
-
                 </li>
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
-        <div class="column">
-
+        <div class="col">
             <h1>😞Devoured</h1>
-            <ul class="float-left">
+            <ul>
                 {{#each burgers}}
                 {{#if devoured}}
                 <li>
@@ -36,9 +34,8 @@
             </ul>
         </div>
     </div>
-    <div class="row">
-
-        <div>
+    <div id="form" class="row text-center">
+        <div class="col justify-content-center">
             <form id='newBurger' action="/" method="POST">
                 <input id="burgerName" type="text" name="burgerDevoured"></input>
 
