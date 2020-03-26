@@ -1,7 +1,6 @@
 
   # Burger App
-  <img src="./assets/images/burgerApp.png" width='300px' />
-
+  ![screenshot](public/assets/images/burgerApp.png)
 
   ![user badge](https://img.shields.io/badge/license-MIT-red)
 
